@@ -49,8 +49,6 @@ namespace SE2___S23___SE2_Game.Entities
         }
         public void Interaction(Keys keyCode)
         {
-            if (IsWithinBoundaries(newPosition))
-            {
 
                 switch (keyCode)
                 {
@@ -70,17 +68,22 @@ namespace SE2___S23___SE2_Game.Entities
                         this.newPosition = this.Position;
                         break;
                 }
+            if (IsWithinBoundaries(newPosition))
 
+            {
                 this.Position = newPosition;
             }
-                                  
             
+                                         
         }
 
         public bool IsWithinBoundaries(Point position)
         {
             if (this.newPosition.X < (World.Instance.Map.CellCount.X * World.Instance.Map.CellSize.Width) &&
-                this.newPosition.Y < (World.Instance.Map.CellCount.Y * World.Instance.Map.CellSize.Height))
+                this.newPosition.Y < (World.Instance.Map.CellCount.Y * World.Instance.Map.CellSize.Height) &&
+                this.newPosition.X >= 0 && this.newPosition.Y >= 0)
+
+
             {
                 return true;
             }
