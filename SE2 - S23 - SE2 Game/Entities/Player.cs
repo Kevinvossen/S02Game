@@ -40,10 +40,13 @@ namespace SE2___S23___SE2_Game.Entities
 
         public Rectangle GetRectForPlayer()
         {
-
+            
             Map map = World.Instance.Map;
-            Rectangle rect = new Rectangle(Position.X, Position.Y, map.CellSize.Width, map.CellSize.Height);
-
+            Rectangle rect = new Rectangle((Position.X + (map.CellSize.Width - this.Size.Width) / 2),
+                                            (Position.Y + (map.CellSize.Height - this.Size.Height) / 2),
+                                            this.Size.Width,
+                                            this.Size.Height);
+                                            
             return rect;
                                           
         }
@@ -82,8 +85,6 @@ namespace SE2___S23___SE2_Game.Entities
             if (this.newPosition.X < (World.Instance.Map.CellCount.X * World.Instance.Map.CellSize.Width) &&
                 this.newPosition.Y < (World.Instance.Map.CellCount.Y * World.Instance.Map.CellSize.Height) &&
                 this.newPosition.X >= 0 && this.newPosition.Y >= 0)
-
-
             {
                 return true;
             }
