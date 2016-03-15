@@ -25,8 +25,21 @@ namespace SE2___S23___SE2_Game.Game
                                      mapSize.Height / cellCount.Y);
         }
 
- 
+        public void Draw(Graphics g)
+        {
+            for (int x = 1; x < this.CellCount.X; x++)
+            {
+                g.DrawLine(Pens.LightGray, x * this.CellSize.Width, 0,
+                    x * this.CellSize.Width, this.MapSize.Height);
+            }
+            for (int y = 1; y < this.CellCount.Y; y++)
+            {
+                g.DrawLine(Pens.LightGray, 0, y * this.CellSize.Width,
+                    this.MapSize.Width, y * this.CellSize.Width);
+            }
 
-       
+        }
+
+
     }
 }

@@ -41,7 +41,7 @@ namespace SE2___S23___SE2_Game.Game
 
         public void Draw(Graphics g)
         {
-            this.Cell.Draw(g);
+            this.Map.Draw(g);
             this.Player.Draw(g);
         }
 
